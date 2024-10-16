@@ -17,11 +17,11 @@ public class CustomUserDetails implements UserDetails{
 	public CustomUserDetails(UserCredentialsEntity user) {
 	this.name = user.getName();
 	this.password = user.getPassword();
-	this.allRoles = allRoles.stream().map((role)-> new SimpleGrantedAuthority(role.getRoleName())).toList();
+//	this.allRoles = user.getAllRoles().stream().map((role)-> new SimpleGrantedAuthority(role.getRoleName())).toList();
 	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.allRoles;
+		return null;
 	}
 
 	@Override
